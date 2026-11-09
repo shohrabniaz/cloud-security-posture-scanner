@@ -1,0 +1,46 @@
+{
+  "storage": [
+    {
+      "name": "logs-prod",
+      "public": false,
+      "encryption": true
+    },
+    {
+      "name": "backup-old",
+      "public": true,
+      "encryption": false
+    }
+  ],
+  "security_groups": [
+    {
+      "name": "web",
+      "ingress": [
+        {
+          "cidr": "10.0.0.0/8",
+          "port": 443
+        }
+      ]
+    },
+    {
+      "name": "ssh-open",
+      "ingress": [
+        {
+          "cidr": "0.0.0.0/0",
+          "port": 22
+        }
+      ]
+    }
+  ],
+  "databases": [
+    {
+      "name": "app-db",
+      "public": false,
+      "encryption": true
+    },
+    {
+      "name": "analytics",
+      "public": true,
+      "encryption": true
+    }
+  ]
+}
